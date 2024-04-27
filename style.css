@@ -1,0 +1,157 @@
+
+/*
+Choose background color
+*/
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #a5c0c9, #f5996a, #ef8172, rgb(242, 208, 208)
+    );
+    background-size: 180% 180%;
+    animation: gradient-animation 20s ease infinite;
+}
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+/*
+choose container size - height
+using flex to set the position of white box
+*/
+
+.container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/*The white box*/
+.list{
+    width:435px;
+    min-height: 100px;/* the default height of the box*/
+    background-color: rgb(255, 255, 255);
+    margin-top: 150px;
+    border-radius: 10px;
+    
+}
+
+.title{
+    display: flex;
+    gap: 12px;
+}
+/*To - do list*/
+.list h1{
+    font-size: 27px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#f58f02
+}
+
+.title img{
+    margin-top: 20px; ;
+    height: 28px;
+}
+
+/*Adding line*/
+.list .row{
+    width: 405px;
+    height: 35px;
+    background-color:rgb(243, 240, 236);
+    border-radius: 35px;
+    margin-left: 15px;
+    margin-bottom: 25px;
+    display: flex;
+}
+
+input{
+    flex:1; /*fulfil the width of the flex row*/
+    border: 0;
+    outline: 0;
+    background-color: transparent;/*using background of parent class*/
+    padding: 15px;
+}
+
+button{
+    border: #ffffff;
+    outline: 0;
+    background-color: #f58f02;
+    color:#ffffff;
+    border-radius: 35px;
+    width: 80px;
+    cursor: pointer;
+    
+}
+
+button:hover{
+    background: #e98b06;
+}
+
+
+/*List of to do*/
+ul li{
+    list-style: none;
+    margin-bottom: 15px;
+    font-size: 17px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    margin-left: 15px;;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+ul li:before{
+    content: '';
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    left: -33px;
+    
+}
+
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+
+ul li span{
+    margin: 0;
+    border: 0;
+    font-weight:600;
+    font-size: 16px;
+    color:#cb0d0d;
+    position: absolute;
+    left: 326px;;
+    top: 0px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background: #edeef0;
+    
+}
+
